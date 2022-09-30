@@ -10,7 +10,7 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 100vh;
+    height: 100vh;   
 }
 
 .titulo{
@@ -22,13 +22,21 @@ body{
     /* color: white; */
     font-size: 20px;
 }
-.tarjetas, .tarjetas-ataques{
+
+
+.tarjetas{
+    display: grid;
+    grid-template-columns: 310px 310px;
+    gap: 10px;
+} 
+
+.tarjetas-ataques{
     display: flex;
     gap: 10px;
 }
 
 .tarjeta-de-mokepon{
-    width: 250px;
+    width: 300px;
     height: 100px;
     background: #293A80; 
     padding: 10px;
@@ -79,6 +87,7 @@ button:active{
     box-sizing: border-box;
     border: 2px solid #537EC5;
     border-radius: 20px;
+    width: 80px;
 }
 
 #mensajes{
@@ -95,7 +104,7 @@ button:active{
 
 .ataques{
     display: grid;
-    grid-template-columns: 150px 150px;    
+    grid-template-columns: 250px 250px;    
 }
 
 .ataques-jugador, .ataques-enemigo{
@@ -104,8 +113,9 @@ button:active{
     align-items: center;
 }
 
-@media (max-width:375px){
+@media (max-width:600px){
     .tarjetas, .tarjetas-ataques{
+        display: flex;
         flex-direction: column;
     }
 }
