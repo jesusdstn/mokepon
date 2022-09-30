@@ -112,6 +112,22 @@ button:active{
     flex-direction: column;
     align-items: center;
 }
+#ver-mapa{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-mapa{   
+        background-color: #293A80;
+        width: 100px;
+        height: 50px;
+        border: 2px solid #537EC5;
+        border-radius: 10px;
+        color: white;
+        font-family: 'Press Start 2P';  
+        margin: 5px; 
+}
 
 @media (max-width:600px){
     .tarjetas, .tarjetas-ataques{
@@ -120,3 +136,10 @@ button:active{
     }
 }
 
+@media (max-width:600px){
+    #ver-mapa div{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8"/>        
         <title>MOKEPON!</title>        
         <link rel="stylesheet" href="./css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>        
         <section id="seleccionar-mascota">
@@ -16,6 +17,17 @@
             
             
             <button id="boton-mascota">Seleccionar</button>
+        </section>
+
+        <section id="ver-mapa">
+            <h2>Recorre el mapa con tu MOKEPON</h2>
+            <canvas id="mapa"></canvas>
+            <button class="button-mapa" onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Up</button>
+           <div>
+                <button class="button-mapa" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Left</button>
+                <button class="button-mapa" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Down</button>
+                <button class="button-mapa" onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Right</button>
+           </div>
         </section>
 
         <section id="seleccionar-ataque">
