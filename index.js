@@ -24,7 +24,7 @@ class Mokepon{
     }
 }
 const app = express()
-app.use(express.static('public'))
+// app.use(express.static('public'))
 app.use(cors())
 app.use(express.json())
 
@@ -91,9 +91,9 @@ app.get("/mokepon/:jugadorId/ataques", (req,res) => {
         ataques:jugador.ataques || []
     })
 })
-app.get("/", function(res,req){
-    res.send("WORKING!!")
-})
+// app.get("/", function(res,req){
+//     res.send("WORKING!!")
+// })
 
 app.listen(8080,() =>{
     console.log("Servidor funcionando")
