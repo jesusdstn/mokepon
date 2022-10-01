@@ -24,6 +24,7 @@ class Mokepon{
     }
 }
 const app = express()
+app.use(express.static('public'))
 app.use(cors())
 app.use(express.json())
 
@@ -32,7 +33,7 @@ app.get("/unirse",(req,res)=>{
 
     const jugador = new Jugador(id)
     jugadores.push(jugador)
-    // res.setHeader("Access-Control-Allow-Origin","*")
+    res.setHeader("Access-Control-Allow-Origin","*")
     res.send(id)
 })
 
@@ -89,6 +90,9 @@ app.get("/mokepon/:jugadorId/ataques", (req,res) => {
     res.send({
         ataques:jugador.ataques || []
     })
+})
+app.get("/", function(res,req){
+    res.send("WORKING!!")
 })
 
 app.listen(8080,() =>{
