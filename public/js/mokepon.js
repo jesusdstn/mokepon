@@ -192,7 +192,7 @@ function iniciarJuego(){
 }
 
 function unirseAlJuego(){
-    fetch("http://localhost:8080/unirse")
+    fetch("https://api-mokepon.herokuapp.com/unirse")
         .then(function (res){            
             if(res.ok){
                 res.text()
@@ -246,7 +246,7 @@ function seleccionarMascotaJugador(){
 }
 
 function seleccionarMokepon(mascotaJugador){
-    fetch(`http://localhost:8080/mokepon/${jugadorId}`,{
+    fetch(`https://api-mokepon.herokuapp.com/mokepon/${jugadorId}`,{
         method:"post",
         headers:{
             "Content-Type":"application/json"
@@ -328,7 +328,7 @@ function secuenciaAtaque(){
     
 }
 function enviarAtaques(){
-    fetch(`http://localhost:8080/mokepon/${jugadorId}/ataques`,{
+    fetch(`https://api-mokepon.herokuapp.com/mokepon/${jugadorId}/ataques`,{
         method:"post",
         headers:{
             "Content-Type":"application/json"
@@ -340,7 +340,7 @@ function enviarAtaques(){
     intervalo = setInterval(obtenerAtaques,50)
 }
 function obtenerAtaques(){
-    fetch(`http://localhost:8080/mokepon/${enemigoId}/ataques`)
+    fetch(`https://api-mokepon.herokuapp.com/mokepon/${enemigoId}/ataques`)
         .then(function(res){
             if(res.ok){
                 res.json()
@@ -554,7 +554,7 @@ function pintarCanvas(){
     })
 }
 function enviarPosicion(x,y){
-    fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`,{
+    fetch(`https://api-mokepon.herokuapp.com/mokepon/${jugadorId}/posicion`,{
         method:"post",
         headers:{
             "Content-Type":"application/json"
