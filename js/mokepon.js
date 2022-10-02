@@ -192,7 +192,7 @@ function iniciarJuego(){
 }
 
 function unirseAlJuego(){
-    fetch("http://192.168.100.77:8080/unirse")
+    fetch("https://mokepon-api.herokuapp.com/unirse")
         .then(function (res){            
             if(res.ok){
                 res.text()
@@ -246,7 +246,7 @@ function seleccionarMascotaJugador(){
 }
 
 function seleccionarMokepon(mascotaJugador){
-    fetch(`http://192.168.100.77:8080/mokepon/${jugadorId}`,{
+    fetch(`https://mokepon-api.herokuapp.com/mokepon/${jugadorId}`,{
         method:"post",
         headers:{
             "Content-Type":"application/json"
@@ -328,7 +328,7 @@ function secuenciaAtaque(){
     
 }
 function enviarAtaques(){
-    fetch(`http://192.168.100.77:8080/mokepon/${jugadorId}/ataques`,{
+    fetch(`https://mokepon-api.herokuapp.com/mokepon/${jugadorId}/ataques`,{
         method:"post",
         headers:{
             "Content-Type":"application/json"
@@ -340,7 +340,7 @@ function enviarAtaques(){
     intervalo = setInterval(obtenerAtaques,50)
 }
 function obtenerAtaques(){
-    fetch(`http://192.168.100.77:8080/mokepon/${enemigoId}/ataques`)
+    fetch(`https://mokepon-api.herokuapp.com/mokepon/${enemigoId}/ataques`)
         .then(function(res){
             if(res.ok){
                 res.json()
@@ -547,14 +547,14 @@ function pintarCanvas(){
     mascotaJugadorObjeto.pintarMokepon();
 
     enviarPosicion(mascotaJugadorObjeto.x,mascotaJugadorObjeto.y)
-    // console.log(mokeponesEnemigos)
+    console.log(mokeponesEnemigos)
     mokeponesEnemigos.forEach(function (mokepon){
         mokepon.pintarMokepon()
         revisarColision(mokepon)        
     })
 }
 function enviarPosicion(x,y){
-    fetch(`http://192.168.100.77:8080/mokepon/${jugadorId}/posicion`,{
+    fetch(`https://mokepon-api.herokuapp.com/mokepon/${jugadorId}/posicion`,{
         method:"post",
         headers:{
             "Content-Type":"application/json"
