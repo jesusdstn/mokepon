@@ -14,19 +14,17 @@
 
             <div id="contenedor-tarjetas" class="tarjetas">
             </div>
-            
-            
             <button id="boton-mascota">Seleccionar</button>
         </section>
 
         <section id="ver-mapa">
             <h2>Recorre el mapa con tu MOKEPON</h2>
             <canvas id="mapa"></canvas>
-            <button class="button-mapa" onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Up</button>
+            <button class="button-mapa" ontouchstart="moverArriba()" ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Up</button>
            <div>
-                <button class="button-mapa" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Left</button>
-                <button class="button-mapa" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Down</button>
-                <button class="button-mapa" onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Right</button>
+                <button class="button-mapa" ontouchstart="moverIzquierda()" ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Left</button>
+                <button class="button-mapa" ontouchstart="moverAbajo()" ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Down</button>
+                <button class="button-mapa" ontouchstart="moverDerecha()" ontouchend="detenerMovimiento()" onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Right</button>
            </div>
         </section>
 
